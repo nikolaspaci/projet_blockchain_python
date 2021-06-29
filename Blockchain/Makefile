@@ -1,7 +1,7 @@
 CPPFLAGS += -I /usr/include/python3.7m
 LIBS=-lpython3.7m 
 
-COMPOSANT = Blockchain
+COMPOSANT = blockchain_component
 
 CPPFLAGS += -I../membre
 

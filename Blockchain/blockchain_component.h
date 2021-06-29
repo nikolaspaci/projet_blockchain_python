@@ -14,8 +14,8 @@ class Blockchain
 {
 private:
     std::vector<Bloc> listeBloc;
-    bool verifyPreviousBlock(Bloc,Bloc)
-    void from_json(nlohmann::json&);
+    bool verifyPreviousBlock(Bloc,Bloc);
+    void from_json(nlohmann::json json);
     /*
     Bloc bloc_from_json(nlohmann::json&);
     TXM txm_from_json(nlohmann::json&);

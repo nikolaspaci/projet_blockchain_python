@@ -2,7 +2,7 @@
 #include <string>
 
 Blockchain::Blockchain(nlohmann::json& json) {
-    importFromJson(json);
+    from_json(json);
 }
 
 Blockchain::~Blockchain() {
@@ -32,7 +32,7 @@ Bloc Blockchain::getBloc(int index) {
     return this->listeBloc.at(index);
 }
 
-py::object Blockchain::to_json(){
+py::object Blockchain::to_json() const{
     nlohmann::json jsonBlochain;
 
     nlohmann::json jsonListeBlocs;
@@ -45,9 +45,9 @@ py::object Blockchain::to_json(){
 }
 
 void Blockchain::from_json(nlohmann::json json){
-    nlohmann::json jsonListeBloc = j["blocs"];
+    nlohmann::json jsonListeBloc = json["blocs"];
     for (nlohmann::json::const_iterator it=jsonListeBloc.begin(); it !=jsonListeBloc.end(); ++it) {
-        Bloc *bloc=new Bloc(*it);
+        Bloc bloc(*it);
         this->listeBloc.push_back(bloc);
     }
 }
