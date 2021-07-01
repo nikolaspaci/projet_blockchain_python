@@ -12,24 +12,11 @@ namespace py = pybind11;
 
 class Blockchain
 {
-private:
+public:
     std::vector<Bloc> listeBloc;
     bool verifyPreviousBlock(Bloc,Bloc);
-    void from_json(nlohmann::json json);
-    /*
-    Bloc bloc_from_json(nlohmann::json&);
-    TXM txm_from_json(nlohmann::json&);
-    TX tx_from_json(nlohmann::json&);
-    UTXO utxo_from_json(nlohmann::json&);
-    TXI txi_from_json(nlohmann::json&);
-    py::object bloc_to_json(Bloc);
-    py::object txm_to_json(TXM);
-    py::object tx_to_json(TX);
-    py::object utxo_to_json(UTXO);
-    py::object txi_to_json(TXI);
-     */
-public:
-    Blockchain(nlohmann::json&);
+    void from_json(const nlohmann::json& json);
+    Blockchain(const nlohmann::json&);
     ~Blockchain();
     int getNbBloc();
     void addBloc(Bloc&);
