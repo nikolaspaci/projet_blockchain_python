@@ -1,12 +1,18 @@
 #include "blockchain_component.h"
 #include <string>
 
+char version[]="1.1.1";
+
 Blockchain::Blockchain(const nlohmann::json& json) {
     from_json(json);
 }
 
 Blockchain::~Blockchain() {
 
+}
+
+const char* getVersion(){
+    return version;
 }
 
 bool Blockchain::verifyPreviousBlock(Bloc b, Bloc bPrev){
@@ -51,12 +57,16 @@ void Blockchain::from_json(const nlohmann::json& json){
         this->listeBloc.push_back(bloc);
     }
 }
+
 #include <pybind11/pybind11.h>
 #include <pybind11/stl.h>
 
 namespace py = pybind11;
 
 PYBIND11_MODULE(blochain_component, m) {
+m.doc()="blockchain object";
+m.def("getVersion", &getVersion, "a function returning the version");
+
 py::class_<Blockchain>(m, "Blockchain")
 .def(py::init<const nlohmann::json &>())
 .def("to_json", &Blockchain::to_json)

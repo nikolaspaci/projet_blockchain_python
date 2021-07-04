@@ -22,6 +22,7 @@ public:
     void addBloc(Bloc&);
     Bloc getBloc(int);
     py::object to_json() const;
+    const char* getVersion();
 };
 #endif //BLOCKCHAIN_BLOCKCHAIN_H
 
