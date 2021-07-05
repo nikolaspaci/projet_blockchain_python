@@ -5,10 +5,9 @@ setdlopenflags (RTLD_GLOBAL | 2)
 
 from bloc_component import Bloc
 from blockchain_component import Blockchain
+#lecture json mock
 f = open('blockChain.json')
 data = json.load(f)
-
-from bloc_component import Bloc
-from blockchain_component import Blockchain
-print(data)
-blocchain=Blockchain(data)
+#deserialisation blockchain
+blockchain=Blockchain(data)
+print(blockchain.to_json())
