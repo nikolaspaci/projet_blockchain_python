@@ -63,7 +63,7 @@ void Blockchain::from_json(const nlohmann::json& json){
 
 namespace py = pybind11;
 
-PYBIND11_MODULE(blochain_component, m) {
+PYBIND11_MODULE(blockchain_component, m) {
 m.doc()="blockchain object";
 m.def("getVersion", &getVersion, "a function returning the version");
 

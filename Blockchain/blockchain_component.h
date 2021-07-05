@@ -1,7 +1,7 @@
 #ifndef BLOCKCHAIN_BLOCKCHAIN_H
 #define BLOCKCHAIN_BLOCKCHAIN_H
 
-#include "../Bloc.h"
+#include "../bloc_component/Bloc.h"
 #include <vector>
 #include <pybind11/pybind11.h>
 #include <nlohmann/json.hpp>
