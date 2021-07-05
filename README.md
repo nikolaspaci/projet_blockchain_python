@@ -1,5 +1,5 @@
 # Composant 3 : BlockChain
-[Documentation de spécification](Document%20de%20sp%C3%A9cification%20composant%203%20blockchain.pdf)
+[Documentation de spécification](doc/Document%20de%20sp%C3%A9cification%20composant%203%20blockchain.pdf)
 ## Fonctionnalités attendues :
  - Sauvegarde et relecture du json 
  - Fourniture du nombre de blocs   
